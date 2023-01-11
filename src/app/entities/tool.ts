@@ -1,10 +1,13 @@
+import { Tags } from './tool-tags';
+import { Description } from './tool-description';
+import { Title } from './tool-title';
 import { randomUUID } from 'crypto';
 
 export interface ToolProps {
-  title: string;
+  title: Title;
   link: string;
-  description: string;
-  tags: string[];
+  description: Description;
+  tags: Tags;
 }
 
 export class Tool {
@@ -20,11 +23,11 @@ export class Tool {
     return this._id;
   }
 
-  public get title(): string {
+  public get title(): Title {
     return this.props.title;
   }
 
-  public set title(title: string) {
+  public set title(title: Title) {
     this.props.title = title;
   }
 
@@ -36,19 +39,19 @@ export class Tool {
     this.props.link = link;
   }
 
-  public get description(): string {
+  public get description(): Description {
     return this.props.description;
   }
 
-  public set description(description: string) {
+  public set description(description: Description) {
     this.props.description = description;
   }
 
-  public get tags(): string[] {
+  public get tags(): Tags {
     return this.props.tags;
   }
 
-  public set tags(tags: string[]) {
+  public set tags(tags: Tags) {
     this.props.tags = tags;
   }
 }
