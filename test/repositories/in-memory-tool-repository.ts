@@ -23,4 +23,10 @@ export class InMemoryToolRepository implements ToolRepository {
   async create(tool: Tool): Promise<void> {
     this.tools.push(tool);
   }
+
+  async removeTool(id: string): Promise<void> {
+    const toolSelect = this.tools.find((ele) => ele.id === id);
+    const index = this.tools.indexOf(toolSelect);
+    if (index > -1) this.tools.splice(index, 1);
+  }
 }
