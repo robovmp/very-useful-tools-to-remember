@@ -11,9 +11,9 @@ export interface ToolProps {
 }
 
 export class Tool {
-  constructor(props: ToolProps) {
+  constructor(props: ToolProps, id?: string) {
     this.props = props;
-    this._id = randomUUID();
+    this._id = id ?? randomUUID();
   }
 
   private _id: string;
