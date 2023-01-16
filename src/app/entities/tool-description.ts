@@ -4,7 +4,7 @@ export class Description {
       this.validateDescriptionLength(description);
 
     if (!isDescriptionLengthValid) {
-      throw new Error('Content length error');
+      throw new Error('Content description length error');
     }
     this.description = description;
   }

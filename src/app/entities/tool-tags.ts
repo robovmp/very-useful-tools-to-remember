@@ -3,7 +3,7 @@ export class Tags {
     const isTagsLengthValid = this.validateTagsLength(tags);
 
     if (!isTagsLengthValid) {
-      throw new Error('Content length error');
+      throw new Error('Content tags length error');
     }
     this.tags = tags;
   }

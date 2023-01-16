@@ -3,7 +3,7 @@ export class Title {
     const isTitleLengthValid = this.validateDescriptionLength(title);
 
     if (!isTitleLengthValid) {
-      throw new Error('Content length error');
+      throw new Error('Content title length error');
     }
     this.title = title;
   }
