@@ -3,7 +3,15 @@ import { CreateToolBody } from './../dtos/create-tool-body';
 import { RemoveTool } from './../../../app/use-cases/remove-tool';
 import { ListTools } from './../../../app/use-cases/list-tools';
 import { FilterToolsTag } from './../../../app/use-cases/filter-tools-tag';
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { RegisterNewTool } from 'src/app/use-cases/register-new-tool';
 
 @Controller('tools')
@@ -24,8 +32,8 @@ export class ToolController {
     };
   }
 
-  @Get('tag')
-  async getToolByTag(@Body('tag') tag: string) {
+  @Get('from')
+  async getToolByTag(@Query('tag') tag: string) {
     const tools = await this.filterToolTag.execute(tag);
 
     return {
