@@ -13,8 +13,10 @@ import {
   Query,
 } from '@nestjs/common';
 import { RegisterNewTool } from 'src/app/use-cases/register-new-tool';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @Controller('tools')
+@ApiTags('Tools')
 export class ToolController {
   constructor(
     private filterToolTag: FilterToolsTag,
@@ -24,6 +26,7 @@ export class ToolController {
   ) {}
 
   @Get()
+  @ApiOperation({ summary: 'List all tools' })
   async getManyTools() {
     const tools = await this.listTools.execute();
 
@@ -33,6 +36,7 @@ export class ToolController {
   }
 
   @Get('from')
+  @ApiOperation({ summary: 'List tools by tag' })
   async getToolByTag(@Query('tag') tag: string) {
     const tools = await this.filterToolTag.execute(tag);
 
@@ -42,6 +46,7 @@ export class ToolController {
   }
 
   @Post('/create')
+  @ApiOperation({ summary: 'Create new tool' })
   async create(@Body() body: CreateToolBody) {
     const { title, link, description, tags } = body;
 
@@ -58,6 +63,7 @@ export class ToolController {
   }
 
   @Delete('delete/:id')
+  @ApiOperation({ summary: 'Remove tool' })
   async deleteTool(@Param('id') id: string) {
     return await this.removeTool.execute(id);
   }
