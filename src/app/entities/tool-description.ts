@@ -4,7 +4,9 @@ export class Description {
       this.validateDescriptionLength(description);
 
     if (!isDescriptionLengthValid) {
-      throw new Error('Content description length error');
+      throw new Error(
+        'Content description length error, min 10 characters and max 240',
+      );
     }
     this.description = description;
   }

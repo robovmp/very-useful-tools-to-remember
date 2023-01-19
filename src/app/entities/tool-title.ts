@@ -3,7 +3,7 @@ export class Title {
     const isTitleLengthValid = this.validateDescriptionLength(title);
 
     if (!isTitleLengthValid) {
-      throw new Error('Content title length error');
+      throw new Error('Content title length error, min 5 character and max 50');
     }
     this.title = title;
   }
