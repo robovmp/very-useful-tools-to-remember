@@ -4,10 +4,8 @@
 
 # env
 .env
-
-#database
-
-prisma/tmp
+.env.prod
+.dockerignore
 
 # Logs
 logs
