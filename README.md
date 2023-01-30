@@ -8,7 +8,7 @@ The project consists of an API to store useful tools , providing query forms.
 
 **Database:** Postgresql
 
-## Instalação
+## Installation
 
 Install very-useful-tools-to-remember with npm
 
@@ -16,6 +16,7 @@ Install very-useful-tools-to-remember with npm
     git clone git@github.com:robovmp/very-useful-tools-to-remember.git
     cd very-useful-tools-to-remember
     npm install or npm i
+    npx prisma db push
 ```
 
 PS: You need a postgres database running on your operating system.
